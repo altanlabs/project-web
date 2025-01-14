@@ -7,12 +7,21 @@ import CVPage from './pages/cv';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<IndexPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/cv" element={<CVPage />} />
-      </Routes>
+      <div>
+        <header className="bg-gray-800 text-white p-4">
+          <div className="container mx-auto">
+            <h1 className="text-2xl font-bold">Antonio's Personal Website</h1>
+          </div>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={<IndexPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/cv" element={<CVPage />} />
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }
