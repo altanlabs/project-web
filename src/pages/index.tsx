@@ -11,14 +11,6 @@ const fadeInUp = {
   transition: { duration: 0.5 }
 }
 
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
-
 export default function IndexPage() {
   const navigate = useNavigate()
 
