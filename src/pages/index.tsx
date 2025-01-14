@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-import { ArrowRight, Component, Palette, Zap } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
 import { Button } from "@/components/ui/button"
@@ -25,7 +24,7 @@ export default function IndexPage() {
 
   return (
     <div className="container mx-auto px-4 py-16 space-y-32">
-      {/* Hero Section */}
+      {/* About Section */}
       <motion.section 
         className="text-center space-y-6"
         initial={{ opacity: 0 }}
@@ -33,98 +32,20 @@ export default function IndexPage() {
         transition={{ duration: 0.8 }}
       >
         <Badge variant="secondary" className="mb-4">
-          Welcome to Your New App
+          About Me
         </Badge>
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-          Build Beautiful Interfaces
-          <br />
-          With Altan AI
+          Antonio Franca
         </h1>
         <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-         Start chatting to edit this app.
+          I am Antonio, an MPhil student in Machine Learning and Machine Intelligence at Cambridge University. Before starting my master's, I completed a BSc in Mathematics at VU Amsterdam, where I worked on my thesis in collaboration with CRM Barcelona, researching how variability in synaptic connectivity can enhance the memory storage capabilities of recurrent neural networks (CA3 region of the hippocampus). I also completed a research internship at Artificial Neural Computing, focusing on modeling the boundary dynamics of neural networks. Additionally, I co-founded altan.ai, a startup aimed at automating workflows using AI, and I had the opportunity to teach courses in Single Variable Calculus, Probability Theory, and Linear Algebra as a Teaching Assistant at VU Amsterdam.
         </p>
-        <Button size="lg" className="mt-4" onClick={() => navigate('/dashboard')}>
-          View sample dashboard <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+          I am interested in exploring the computational principles of natural and artificial intelligence, aiming to "reverse engineer" the brain's algorithms, both to learn about how our brains work and to build more effective AI systems. In the long term, my goal is to leverage AI to help people gain greater agency over their circumstances and reach their full potential. I particularly want to focus my research on areas such as neural representations and computational dynamics in the brain, learning algorithms that enable continual and efficient skill acquisition, meta-learning and online learning frameworks, understanding the theoretical underpinnings of deep learning, studying knowledge representation and hierarchical abstraction in neural networks, and advancing reinforcement learning techniques for adaptive behavior.
+        </p>
       </motion.section>
 
-      {/* Features Section */}
-      <motion.section
-        variants={staggerContainer}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="grid gap-8 md:grid-cols-3"
-      >
-        <motion.div variants={fadeInUp}>
-          <Card>
-            <CardContent className="pt-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <Component className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold">Reusable Components</h3>
-              <p className="text-muted-foreground">
-                Pre-built components that you can easily customize and integrate into your projects.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        <motion.div variants={fadeInUp}>
-          <Card>
-            <CardContent className="pt-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <Palette className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold">Themeable Design</h3>
-              <p className="text-muted-foreground">
-                Easily customize the look and feel with our flexible theming system.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        <motion.div variants={fadeInUp}>
-          <Card>
-            <CardContent className="pt-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <Zap className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold">Fast Development</h3>
-              <p className="text-muted-foreground">
-                Speed up your development process with our ready-to-use components.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </motion.section>
-
-      {/* Components Preview Section */}
-      <motion.section
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="space-y-8"
-      >
-        <motion.div variants={fadeInUp} className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Explore Our Components
-          </h2>
-          <p className="mx-auto mt-4 max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-            Discover our extensive library of components, designed to help you build better interfaces.
-          </p>
-        </motion.div>
-
-        <motion.div 
-          variants={staggerContainer}
-          className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
-        >
-          {/* Add component previews here */}
-          {/* You can showcase some of your most important components */}
-        </motion.div>
-      </motion.section>
-
-      {/* CTA Section */}
+      {/* Navigation Section */}
       <motion.section
         initial="initial"
         whileInView="animate"
@@ -133,17 +54,17 @@ export default function IndexPage() {
       >
         <motion.div variants={fadeInUp}>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-            Ready to Get Started?
+            Explore More
           </h2>
-          <p className="mx-auto mt-4 max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-            Start building your next project with our modern component library.
-          </p>
           <div className="mt-6 flex justify-center gap-4">
-            <Button size="lg" variant="default">
-              Some CTA
+            <Button size="lg" variant="default" onClick={() => navigate('/blog')}>
+              Blog
             </Button>
-            <Button size="lg" variant="outline">
-              Main CTA
+            <Button size="lg" variant="outline" onClick={() => navigate('/projects')}>
+              Projects
+            </Button>
+            <Button size="lg" variant="outline" onClick={() => navigate('/cv')}>
+              CV
             </Button>
           </div>
         </motion.div>
